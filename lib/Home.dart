@@ -1,3 +1,4 @@
+import 'package:final_project/Modify.dart';
 import 'package:flutter/material.dart';
 import 'FirebaseAction.dart';
 
@@ -67,7 +68,10 @@ class _HomeState extends State<Home> {
           child: Icon(Icons.add),
           backgroundColor: Colors.lightBlueAccent,
           onPressed: () {
-            //navigate to modification page
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => Modify()),
+            );
           },
         ),
       ),
