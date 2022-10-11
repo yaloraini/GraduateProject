@@ -1,5 +1,7 @@
+import 'package:final_project/Home.dart';
 import 'package:flutter/material.dart';
 import 'FirebaseAction.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class Modify extends StatefulWidget {
   @override
@@ -100,6 +102,20 @@ class _ModifyState extends State<Modify> {
                   'ProductPrice': PPriceController.text,
                   'ProductDescription': PBPDController.text
                 });
+
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Home()),
+                );
+
+                Fluttertoast.showToast(
+                    msg: "Product Added",
+                    toastLength: Toast.LENGTH_SHORT,
+                    gravity: ToastGravity.CENTER,
+                    timeInSecForIosWeb: 1,
+                    backgroundColor: Colors.red,
+                    textColor: Colors.white,
+                    fontSize: 16.0);
               },
               child: Text(
                 "SUBMIT",
