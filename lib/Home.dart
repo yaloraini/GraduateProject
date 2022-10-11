@@ -11,8 +11,6 @@ class _HomeState extends State<Home> {
   @override
   int _currentIndex = 0;
   Widget build(BuildContext context) {
-    AddProduct({"test": "vv"});
-
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
