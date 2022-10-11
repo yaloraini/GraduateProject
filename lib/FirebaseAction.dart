@@ -29,3 +29,11 @@ Future<DataSnapshot> getAllProduct() async {
 
   return snapShots;
 }
+
+Future<DataSnapshot> getProduct(key) async {
+  FirebaseDatabase database = FirebaseDatabase.instance;
+  final ref = FirebaseDatabase.instance.ref();
+  final snapShots = await ref.child("/Product" + key).get();
+
+  return snapShots;
+}
