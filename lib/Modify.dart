@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
-
+import 'FirebaseAction.dart';
 
 class Modify extends StatefulWidget {
-  
   @override
   State<Modify> createState() => _ModifyState();
 }
 
 class _ModifyState extends State<Modify> {
+  final PNameController = TextEditingController();
+  final PPriceController = TextEditingController();
+  final PBPDController = TextEditingController();
 
   @override
   int _currentIndex = 0;
@@ -51,6 +53,7 @@ class _ModifyState extends State<Modify> {
                     Padding(
                       padding: const EdgeInsets.symmetric(vertical: 20),
                       child: TextFormField(
+                        controller: PNameController,
                         keyboardType: TextInputType.name,
                         decoration: const InputDecoration(
                           labelText: 'Product Name',
@@ -62,6 +65,7 @@ class _ModifyState extends State<Modify> {
                     Padding(
                       padding: const EdgeInsets.symmetric(vertical: 20),
                       child: TextFormField(
+                        controller: PPriceController,
                         keyboardType: TextInputType.name,
                         decoration: const InputDecoration(
                           labelText: 'Starting Price',
@@ -73,6 +77,7 @@ class _ModifyState extends State<Modify> {
                     Padding(
                       padding: const EdgeInsets.symmetric(vertical: 20),
                       child: TextFormField(
+                        controller: PBPDController,
                         keyboardType: TextInputType.name,
                         decoration: const InputDecoration(
                           labelText: 'Brief Product Description',
@@ -89,7 +94,13 @@ class _ModifyState extends State<Modify> {
             //Here goes the photo thing
 
             MaterialButton(
-              onPressed: () {},
+              onPressed: () {
+                AddProduct({
+                  'ProductName': PNameController.text,
+                  'ProductPrice': PPriceController.text,
+                  'ProductDescription': PBPDController.text
+                });
+              },
               child: Text(
                 "SUBMIT",
                 style: TextStyle(
@@ -125,8 +136,6 @@ class _ModifyState extends State<Modify> {
           onTap: (index) {
             setState(() {
               _currentIndex = index;
-                
-              
             });
           },
         ),
@@ -189,9 +198,7 @@ class NavigationDrawer extends StatelessWidget {
               color: Colors.lightBlueAccent,
             ),
             title: const Text('Home'),
-            onTap: () {
-             
-            },
+            onTap: () {},
           ),
           ListTile(
             leading: const Icon(
@@ -199,9 +206,7 @@ class NavigationDrawer extends StatelessWidget {
               color: Colors.lightBlueAccent,
             ),
             title: const Text('Profile'),
-            onTap: () {
-              
-            },
+            onTap: () {},
           ),
           ListTile(
             leading: const Icon(
@@ -242,9 +247,7 @@ class NavigationDrawer extends StatelessWidget {
               color: Colors.lightBlueAccent,
             ),
             title: Text('Log Out'),
-            onTap: () {
-              
-            },
+            onTap: () {},
           ),
         ],
       );
