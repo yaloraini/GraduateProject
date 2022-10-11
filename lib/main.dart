@@ -9,6 +9,6 @@ void main() async {
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   runApp(MaterialApp(
     title: 'Zaad',
-    home: Home(),
+    home: Login(),
   ));
 }
