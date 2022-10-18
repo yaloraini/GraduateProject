@@ -1,5 +1,6 @@
 import 'package:final_project/Modify.dart';
 import 'package:flutter/material.dart';
+import 'Product_options.dart';
 import 'FirebaseAction.dart';
 
 class Home extends StatefulWidget {
@@ -14,7 +15,7 @@ class _HomeState extends State<Home> {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-            backgroundColor: Colors.white,
+            backgroundColor: Colors.lightBlueAccent,
             title: Padding(
               padding: const EdgeInsets.only(left: 77),
               child: Row(
@@ -25,12 +26,12 @@ class _HomeState extends State<Home> {
                     style: TextStyle(
                       fontFamily: 'Bellota',
                       fontSize: 30,
-                      color: Colors.lightBlueAccent,
+                      color: Colors.white,
                     ),
                   ),
                   Icon(
                     Icons.notifications_none_outlined,
-                    color: Colors.lightBlueAccent,
+                    color: Colors.white,
                   )
                 ],
               ),
@@ -68,7 +69,7 @@ class _HomeState extends State<Home> {
           onPressed: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => Modify()),
+              MaterialPageRoute(builder: (context) => Product_options()),
             );
           },
         ),

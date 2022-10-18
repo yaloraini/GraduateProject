@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'Home.dart';
+import 'Login.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 class Signup extends StatefulWidget {
@@ -167,7 +168,12 @@ class _SignupState extends State<Signup> {
                         Padding(
                           padding: const EdgeInsets.only(right: 45),
                           child: MaterialButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => Login()),
+                            );
+                            },
                             child: const Text(
                               'LOG IN',
                               style: TextStyle(

@@ -1,6 +1,7 @@
 import 'package:final_project/Home.dart';
 import 'package:flutter/material.dart';
 import 'FirebaseAction.dart';
+import 'Login.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
 class Modify extends StatefulWidget {
@@ -152,6 +153,10 @@ class _ModifyState extends State<Modify> {
           onTap: (index) {
             setState(() {
               _currentIndex = index;
+              Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => Home()),
+                            );
             });
           },
         ),
@@ -214,7 +219,12 @@ class NavigationDrawer extends StatelessWidget {
               color: Colors.lightBlueAccent,
             ),
             title: const Text('Home'),
-            onTap: () {},
+            onTap: () {
+              Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => Home()),
+                            );
+            },
           ),
           ListTile(
             leading: const Icon(
@@ -263,7 +273,12 @@ class NavigationDrawer extends StatelessWidget {
               color: Colors.lightBlueAccent,
             ),
             title: Text('Log Out'),
-            onTap: () {},
+            onTap: () {
+              Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => Login()),
+                            );
+            },
           ),
         ],
       );

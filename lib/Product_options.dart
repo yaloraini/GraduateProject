@@ -1,3 +1,6 @@
+import 'package:final_project/Home.dart';
+import 'package:final_project/Login.dart';
+import 'package:final_project/Modify.dart';
 import 'package:flutter/material.dart';
 
 class Product_options extends StatefulWidget {
@@ -43,7 +46,10 @@ class _Product_optionsState extends State<Product_options> {
                 padding: const EdgeInsets.only(top: 20),
                 child: MaterialButton(
                   onPressed: () {
-                    //navigate to add page
+                    Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => Modify()),
+                            );
                   },
                   child: Text(
                     'Add new auction',
@@ -127,7 +133,12 @@ class _Product_optionsState extends State<Product_options> {
           onTap: (index) {
             setState(() {
               _currentIndex = index;
-              // navigate to the corresponding page according to the index
+              if (_currentIndex == 0){
+                Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => Home()),
+                            );
+              }
             });
           },
         ),
@@ -190,7 +201,12 @@ class NavigationDrawer extends StatelessWidget {
               color: Colors.lightBlueAccent,
             ),
             title: const Text('Home'),
-            onTap: () {},
+            onTap: () {
+              Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => Home()),
+                            );
+            },
           ),
           ListTile(
             leading: const Icon(
@@ -240,7 +256,10 @@ class NavigationDrawer extends StatelessWidget {
             ),
             title: Text('Log Out'),
             onTap: () {
-              print('side log out is working');
+              Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => Login()),
+                            );
             },
           ),
         ],
