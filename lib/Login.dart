@@ -58,9 +58,9 @@ class _LoginState extends State<Login> {
                         controller: usernameController,
                         keyboardType: TextInputType.name,
                         decoration: const InputDecoration(
-                          labelText: 'Username',
-                          hintText: 'username',
-                          prefixIcon: Icon(Icons.account_circle_rounded),
+                          labelText: 'E-mail',
+                          hintText: 'email',
+                          prefixIcon: Icon(Icons.mail_outline_outlined),
                           border: OutlineInputBorder(),
                         ),
                         onChanged: (String value) {},

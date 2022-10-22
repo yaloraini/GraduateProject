@@ -1,8 +1,11 @@
 import 'package:final_project/Home.dart';
+import 'package:final_project/profile.dart';
 import 'package:flutter/material.dart';
 import 'FirebaseAction.dart';
 import 'Login.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+
+import 'Settings.dart';
 
 class Modify extends StatefulWidget {
   @override
@@ -93,9 +96,9 @@ class _ModifyState extends State<Modify> {
                 ),
               ),
             ),
-
+    
             //Here goes the photo thing
-
+    
             MaterialButton(
               onPressed: () {
                 AddProduct({
@@ -103,12 +106,12 @@ class _ModifyState extends State<Modify> {
                   'ProductPrice': PPriceController.text,
                   'ProductDescription': PBPDController.text
                 });
-
+    
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => Home()),
                 );
-
+    
                 Fluttertoast.showToast(
                     msg: "Product Added",
                     toastLength: Toast.LENGTH_SHORT,
@@ -221,9 +224,9 @@ class NavigationDrawer extends StatelessWidget {
             title: const Text('Home'),
             onTap: () {
               Navigator.push(
-                              context,
-                              MaterialPageRoute(builder: (context) => Home()),
-                            );
+                context,
+                MaterialPageRoute(builder: (context) => Home()),
+              );
             },
           ),
           ListTile(
@@ -232,7 +235,12 @@ class NavigationDrawer extends StatelessWidget {
               color: Colors.lightBlueAccent,
             ),
             title: const Text('Profile'),
-            onTap: () {},
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => Profile()),
+              );
+            },
           ),
           ListTile(
             leading: const Icon(
@@ -264,7 +272,10 @@ class NavigationDrawer extends StatelessWidget {
             ),
             title: Text('Settings'),
             onTap: () {
-              print('side settings is working');
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => Settings()),
+              );
             },
           ),
           ListTile(
@@ -275,9 +286,9 @@ class NavigationDrawer extends StatelessWidget {
             title: Text('Log Out'),
             onTap: () {
               Navigator.push(
-                              context,
-                              MaterialPageRoute(builder: (context) => Login()),
-                            );
+                context,
+                MaterialPageRoute(builder: (context) => Login()),
+              );
             },
           ),
         ],
