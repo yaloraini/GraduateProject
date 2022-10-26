@@ -3,8 +3,9 @@ import 'package:final_project/Login.dart';
 import 'package:final_project/Modify.dart';
 import 'package:final_project/profile.dart';
 import 'package:flutter/material.dart';
-
+import 'AddPage.dart';
 import 'Settings.dart';
+import 'Modify.dart';
 
 class Product_options extends StatefulWidget {
 
@@ -50,10 +51,7 @@ class _Product_optionsState extends State<Product_options> {
                   padding: const EdgeInsets.only(top: 20),
                   child: MaterialButton(
                     onPressed: () {
-                      Navigator.push(
-                                context,
-                                MaterialPageRoute(builder: (context) => Modify()),
-                              );
+                      Navigator.push(context,MaterialPageRoute(builder: (context) => Modify(),));
                     },
                     child: Text(
                       'Add new auction',
@@ -74,7 +72,10 @@ class _Product_optionsState extends State<Product_options> {
                   padding: const EdgeInsets.only(top: 20),
                   child: MaterialButton(
                     onPressed: () {
-                      //navigate to modify page
+                      Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => AddPage()),
+                      );
                     },
                     child: Text(
                       'Modify auction',
@@ -139,9 +140,9 @@ class _Product_optionsState extends State<Product_options> {
                 _currentIndex = index;
                 if (_currentIndex == 0){
                   Navigator.push(
-                                context,
-                                MaterialPageRoute(builder: (context) => Home()),
-                              );
+                    context,
+                    MaterialPageRoute(builder: (context) => Home()),
+                  );
                 }
               });
             },

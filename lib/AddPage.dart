@@ -5,17 +5,18 @@ import 'FirebaseAction.dart';
 import 'Login.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'dart:io';
+import 'Modify.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:path/path.dart';
 import 'Settings.dart';
 
-class Modify extends StatefulWidget {
+class AddPage extends StatefulWidget {
   @override
-  State<Modify> createState() => _ModifyState();
+  State<AddPage> createState() => _AddPageState();
 }
 
-class _ModifyState extends State<Modify> {
+class _AddPageState extends State<AddPage> {
   final PNameController = TextEditingController();
   final PPriceController = TextEditingController();
   final PBPDController = TextEditingController();
@@ -76,7 +77,7 @@ class _ModifyState extends State<Modify> {
             Padding(
               padding: const EdgeInsets.only(top: 40),
               child: Text(
-                  'Add Auction',
+                  'Modify Auction',
                   style: TextStyle(
                     fontFamily: 'Bellota',
                     fontSize: 35,
@@ -87,7 +88,7 @@ class _ModifyState extends State<Modify> {
             Form(
               child: Padding(
                 padding:
-                    const EdgeInsets.only(bottom: 35, left: 20, right: 20),
+                    const EdgeInsets.symmetric(vertical: 35, horizontal: 20),
                 child: Column(
                   children: [
                     Padding(
